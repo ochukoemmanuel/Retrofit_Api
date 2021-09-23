@@ -1,5 +1,6 @@
 package com.ebeatsz.retrofitlib;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,9 +29,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         return new PostViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull PostAdapter.PostViewHolder holder, int position) {
-
+        Post post = postList.get(position);
+        holder.userId.setText("userId: " + post.getUserId());
+        holder.id.setText("id: " + post.getId());
+        holder.title.setText("title: " + post.getTitle());
+        holder.body.setText("body: " + post.getBody());
     }
 
     @Override
@@ -44,10 +50,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            title = itemView.findViewById(R.id.title_tv);
-            id = itemView.findViewById(R.id.id_tv);
             userId = itemView.findViewById(R.id.user_id_tv);
+            id = itemView.findViewById(R.id.id_tv);
+            title = itemView.findViewById(R.id.title_tv);
             body = itemView.findViewById(R.id.body_tv);
         }
     }
