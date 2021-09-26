@@ -7,6 +7,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface JSONPlaceholder {
-    @GET("posts")
+    @GET("products")
     Call<List<Post>> getPost();
 }

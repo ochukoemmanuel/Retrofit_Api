@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         // SETUP 1
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com")
+                .baseUrl("https://fakestoreapi.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
